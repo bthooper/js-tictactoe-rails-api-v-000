@@ -56,6 +56,8 @@ function attachListeners() {
     }
   });
 
+  // Previous button
+
   $('button#previous').on('click', function(e) {
     e.preventDefault;
     alert("You are in the previous button action");
@@ -74,6 +76,8 @@ function attachListeners() {
 
   });
 
+  // Save button
+
   $('button#save').on('click', function(e) {
     e.preventDefault;
     // Save the current game state
@@ -83,6 +87,15 @@ function attachListeners() {
 
 
     alert("At the save...");
+  });
+
+  // Clear button
+
+  $('button#clear').on('click', function(e) {
+    e.preventDefault;
+
+    alert('All clear!!');
+
   });
 
 
