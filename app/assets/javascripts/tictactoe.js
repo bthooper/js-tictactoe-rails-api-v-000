@@ -1,6 +1,7 @@
 // Code your JavaScript / jQuery solution here
 
-var turn = 0;
+let turn = 0;
+let game_id = 0;
 
 $(document).ready(function() {
   attachListeners();
@@ -83,10 +84,30 @@ function attachListeners() {
     // Save the current game state
     // if the game exists update previous game
     // if it is new, save it
-    
-
-
     alert("At the save...");
+
+    let state = {};
+
+    $('td').text((index, square) => { state.push(square); });
+
+    if (game_id == 0) {
+      // the game has not yet been saved
+      fetch('/games', {
+        method: 'POST',
+        body: {
+          state: state
+        }
+      });
+      
+
+    } else {
+      // the game already exists and should be updated
+
+    }
+
+
+     
+
   });
 
   // Clear button
